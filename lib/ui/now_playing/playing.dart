@@ -279,6 +279,7 @@ class _NowPlayingPageState extends State<NowPlayingPage> with SingleTickerProvid
     _resetRotationAnim();
     setState(() {
       _song = nextSong;
+      _audioPlayerManager.init(isNewSong: true);
     });
   }
 
@@ -299,6 +300,7 @@ class _NowPlayingPageState extends State<NowPlayingPage> with SingleTickerProvid
     _resetRotationAnim();
     setState(() {
       _song = nextSong;
+      _audioPlayerManager.init(isNewSong: true);
     });
   }
 
