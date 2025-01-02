@@ -81,12 +81,9 @@ class _NowPlayingPageState extends State<NowPlayingPage> with SingleTickerProvid
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(_song.album),
-              const SizedBox(
-                height: 16,
-              ),
               const Text('_ ___ _'),
               const SizedBox(
-                height: 48,
+                height: 8,
               ),
               RotationTransition(turns: Tween(begin: 0.0, end: 1.0).animate(_imageAnimController),
               child: ClipRRect(
@@ -189,11 +186,11 @@ class _NowPlayingPageState extends State<NowPlayingPage> with SingleTickerProvid
               onSeek: _audioPlayerManager.player.seek,
               barHeight: 5.0,
               barCapShape: BarCapShape.round,
-              baseBarColor: Colors.grey.withOpacity(0.3),
+              baseBarColor: Colors.grey.withValues(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.3),
               progressBarColor: Colors.green,
-              bufferedBarColor: Colors.grey.withOpacity(0.3),
+              bufferedBarColor: Colors.grey.withValues(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.3),
               thumbColor: Colors.deepPurple,
-              thumbGlowColor: Colors.green.withOpacity(0.3),
+              thumbGlowColor: Colors.grey.withValues(red: 0.5, green: 0.3, blue: 0.5, alpha: 0.3),
               thumbRadius: 10.0,
           );
         });

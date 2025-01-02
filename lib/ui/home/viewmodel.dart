@@ -18,7 +18,7 @@ class MusicAppViewModel {
       }
     } catch (e) {
       // Xử lý lỗi nếu có, ví dụ: log lỗi hoặc thông báo
-      print('Error loading songs: $e');
+      debugPrint('Error loading songs: $e');
     }
   }
 }
