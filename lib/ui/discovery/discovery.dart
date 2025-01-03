@@ -39,7 +39,8 @@ class _HomeTabPageState extends State<HomeTabPage> {
   List<Song> songs = [];
   List<Song> filteredSongs = [];
   late MusicAppViewModel _viewModel = MusicAppViewModel();
-  TextEditingController _searchController = TextEditingController();
+  final FocusNode _focusNode = FocusNode();  // Tạo FocusNode
+  final TextEditingController _searchController = TextEditingController();
 
   @override
   void initState() {
@@ -54,17 +55,13 @@ class _HomeTabPageState extends State<HomeTabPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Music Discovery"),
         actions: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Icon(Icons.search),
-          ),
-          Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Container(
-              width: 200,
+            child: SizedBox(
+              width: 335,
               child: TextField(
+                focusNode: _focusNode,
                 controller: _searchController,
                 decoration: const InputDecoration(
                   hintText: 'Search...',
@@ -72,10 +69,17 @@ class _HomeTabPageState extends State<HomeTabPage> {
                   filled: true,
                   fillColor: Colors.white,
                 ),
+                keyboardType: TextInputType.text,
                 style: TextStyle(color: Colors.black),
               ),
             ),
           ),
+
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Icon(Icons.search),
+          ),
+
         ],
       ),
       body: getBody(),

@@ -6,8 +6,6 @@ import 'package:music_app/ui/now_playing/audio_player_manager.dart';
 import '../../data/model/song.dart';
 import '../discovery/discovery.dart';
 import '../now_playing/playing.dart';
-import '../settings/settings.dart';
-import '../user/user.dart';
 
 class MusicApp extends StatelessWidget {
   const MusicApp({super.key});
@@ -39,8 +37,6 @@ class _MusicHomePageState extends State<MusicHomePage> {
   final List<Widget> _tabs = [
     const HomeTab(),
     const DiscoveryTab(),
-    const AccountTab(),
-    const SettingsTab(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -54,8 +50,6 @@ class _MusicHomePageState extends State<MusicHomePage> {
                 items: const [
                   BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
                   BottomNavigationBarItem(icon: Icon(Icons.album), label: 'Discovery'),
-                  BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Account'),
-                  BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings'),
                 ],
             ),
             tabBuilder: (BuildContext context, int index) {
